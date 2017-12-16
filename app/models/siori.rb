@@ -1,0 +1,2 @@
+class Siori < ApplicationRecord
+end
