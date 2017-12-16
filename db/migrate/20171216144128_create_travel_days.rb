@@ -1,8 +1,8 @@
 class CreateTravelDays < ActiveRecord::Migration[5.1]
   def change
     create_table :travel_days do |t|
-      t.integer :travel_days
-      t.integer :day
+      t.integer :travel_days, :null => false
+      t.integer :day,         :null => false, default: 1
       
       t.timestamps
     end
