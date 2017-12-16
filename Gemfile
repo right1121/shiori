@@ -39,6 +39,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'pry-rails'  # rails consoleでirbの代わりにpryを使われる
 end
 
 group :development do
@@ -52,3 +53,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'devise' #ユーザー認証
+gem 'kaminari' #ページネーション
+gem 'jquery-ui-rails' #インタラクティブなWebサイト開発 jqueryを確認
+gem 'bootstrap-sass' #WEBデザインフレームワーク
+gem 'devise_invitable' #ユーザー招待
+gem 'ranked-model' #順番を管理する
+gem 'jquery-turbolinks' #Turbolinks対策
