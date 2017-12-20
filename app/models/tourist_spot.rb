@@ -1,5 +1,4 @@
 class TouristSpot < ApplicationRecord
-    belongs_to :travel_day
-    has_many :tourist_spots
-    has_one :tourist_details
+    has_many :tourist_days
+    belongs_to :tourist_details, :dependent => :destroy
 end
