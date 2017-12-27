@@ -8,7 +8,7 @@ class CreateSioris < ActiveRecord::Migration[5.1]
       t.timestamps
     end
     
-    add_index:siori, [:user_id]
-    add_index:siori, [:departure_date]
+    add_index:sioris, [:user_id]
+    add_index:sioris, [:departure_date]
   end
 end

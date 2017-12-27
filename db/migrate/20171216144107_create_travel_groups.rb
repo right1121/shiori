@@ -6,7 +6,7 @@ class CreateTravelGroups < ActiveRecord::Migration[5.1]
       
       t.timestamps
     end
-    add_index:travel_group, [:user_id]
-    add_index:travel_group, [:siori_id]
+    add_index:travel_groups, [:user_id]
+    add_index:travel_groups, [:siori_id]
   end
 end
