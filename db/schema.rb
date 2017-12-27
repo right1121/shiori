@@ -12,6 +12,54 @@
 
 ActiveRecord::Schema.define(version: 20171219150153) do
 
+  create_table "sioris", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.text "content"
+    t.date "departure_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["departure_date"], name: "index_sioris_on_departure_date"
+    t.index ["user_id"], name: "index_sioris_on_user_id"
+  end
+
+  create_table "tourist_details", force: :cascade do |t|
+    t.integer "tourist_spot_id", null: false
+    t.string "title", null: false
+    t.text "content"
+    t.integer "longitude"
+    t.integer "latitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tourist_spot_id"], name: "index_tourist_details_on_tourist_spot_id"
+  end
+
+  create_table "tourist_spots", force: :cascade do |t|
+    t.integer "travel_day_id", null: false
+    t.integer "order", null: false
+    t.time "arrival_time"
+    t.integer "duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "travel_days", force: :cascade do |t|
+    t.integer "travel_days", null: false
+    t.integer "siori_id", null: false
+    t.integer "day", default: 1, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["siori_id"], name: "index_travel_days_on_siori_id"
+  end
+
+  create_table "travel_groups", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "siori_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["siori_id"], name: "index_travel_groups_on_siori_id"
+    t.index ["user_id"], name: "index_travel_groups_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
