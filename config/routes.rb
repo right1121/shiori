@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'landing_page#index'
+  devise_scope :user do
+    root :to => "devise/sessions#new"
+  end
 end
