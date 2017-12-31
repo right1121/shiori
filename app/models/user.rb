@@ -7,5 +7,5 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 20 }
   
   has_many :travel_groups, dependent: :destroy
-  has_many :siori, through: :travel_groups, dependent: :destroy
+  has_many :sioris, through: :travel_groups, dependent: :destroy
 end
