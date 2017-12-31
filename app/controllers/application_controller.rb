@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   
   def after_sign_in_path_for(resource)
-    '/users/edit' #ログイン後の推移先。後程編集
+    # FIXME: 推移先を作成後に修正する。
+    '/users/edit'
   end
   
   protected
