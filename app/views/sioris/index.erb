@@ -1,0 +1,10 @@
+<h1>Sioris#index</h1>
+<p>Find me in app/views/sioris/edit.html.erb</p>
+
+<% @sioris.each do |siori| %>
+    <p><%= siori.id %></p>
+<% end %>
+
+<% @current_user.each do |user| %>
+    <p><%= user.name %></p>
+<% end %>

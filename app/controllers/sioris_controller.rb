@@ -1,4 +1,8 @@
 class SiorisController < ApplicationController
+  def index
+    @sioris = Siori.all
+  end
+  
   def create
   end
 
