@@ -1,8 +1,4 @@
 class SiorisController < ApplicationController
-  def index
-    @sioris = Siori.find(1)
-  end
-
   def create
   end
 
@@ -13,7 +9,7 @@ class SiorisController < ApplicationController
   end
 
   def show
-    @sioris = Siori.find(params[:id])
+    @sioris = Siori.where()
   end
 
   def update
