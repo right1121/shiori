@@ -1,10 +1,8 @@
 <h1>Sioris#index</h1>
-<p>Find me in app/views/sioris/edit.html.erb</p>
+<p>Find me in app/views/sioris/index.html.erb</p>
 
-<% @sioris.each do |siori| %>
-    <p><%= siori.id %></p>
-<% end %>
+<p><%= @user.id %></p>
 
-<% @current_user.each do |user| %>
-    <p><%= user.name %></p>
+<% @sioris.each do |group| %>
+  <p><%= group.siori.id %></p>
 <% end %>
