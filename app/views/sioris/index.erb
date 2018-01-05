@@ -3,6 +3,6 @@
 
 <p><%= @user.id %></p>
 
-<% @sioris.each do |group| %>
+<% @user.travel_groups.each do |group| %>
   <p><%= group.siori.id %></p>
 <% end %>
