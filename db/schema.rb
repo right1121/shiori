@@ -13,11 +13,13 @@
 ActiveRecord::Schema.define(version: 20171219150153) do
 
   create_table "sioris", force: :cascade do |t|
+    t.integer "user_id", null: false
     t.text "content"
     t.date "departure_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["departure_date"], name: "index_sioris_on_departure_date"
+    t.index ["user_id"], name: "index_sioris_on_user_id"
   end
 
   create_table "tourist_details", force: :cascade do |t|
@@ -50,8 +52,8 @@ ActiveRecord::Schema.define(version: 20171219150153) do
   end
 
   create_table "travel_groups", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "siori_id"
+    t.integer "user_id", null: false
+    t.integer "siori_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["siori_id"], name: "index_travel_groups_on_siori_id"
