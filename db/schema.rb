@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20171219150153) do
   end
 
   create_table "travel_groups", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "siori_id", null: false
+    t.integer "user_id"
+    t.integer "siori_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["siori_id"], name: "index_travel_groups_on_siori_id"
