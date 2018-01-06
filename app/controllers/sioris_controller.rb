@@ -7,7 +7,14 @@ class SiorisController < ApplicationController
   end
   
   def create
+    @siori = Siori.new(siori_params)
     @user = find_login_user
+    @user.sioris << @siori
+    if @user.save
+      redirect_to sioris_url
+    else
+      render 'new'
+    end
   end
 
   def new
@@ -34,7 +41,7 @@ class SiorisController < ApplicationController
   
   def siori_params
     params.require(:siori).permit(
-      :content
+      :content,
       :departure_date
     )
   end
