@@ -7,11 +7,11 @@ class SiorisController < ApplicationController
   end
   
   def create
+    @user = find_login_user
   end
 
   def new
-    @user = find_login_user
-    @user.sioris.build
+    @siori = Siori.new
   end
 
   def edit
@@ -33,6 +33,9 @@ class SiorisController < ApplicationController
   end
   
   def siori_params
-    
+    params.require(:siori).permit(
+      :content
+      :departure_date
+    )
   end
 end

@@ -1,0 +1,5 @@
+<%= form_for(@siori) do |f| %>
+        <%= f.text_area :content %>
+        <%= f.date_field :departure_date %>
+    <%= f.submit "しおりを作成する" %>
+<% end %>
