@@ -1,5 +1,8 @@
-<%= form_for(@siori) do |f| %>
-        <%= f.text_area :content %>
-        <%= f.date_field :departure_date %>
-    <%= f.submit "しおりを作成する" %>
+<%= form_for @siori do |f| %>
+  <%= f.text_area :content %>
+  <%= f.date_field :departure_date %>
+  <%= f.fields_for :travel_day do |d| %>
+    <%= d.number_field :day %>
+  <% end %>      
+  <%= f.submit "しおりを作成する" %>
 <% end %>

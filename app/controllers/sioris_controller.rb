@@ -19,6 +19,7 @@ class SiorisController < ApplicationController
 
   def new
     @siori = Siori.new
+    @siori.build_travel_day
   end
 
   def edit
@@ -42,7 +43,8 @@ class SiorisController < ApplicationController
   def siori_params
     params.require(:siori).permit(
       :content,
-      :departure_date
+      :departure_date,
+      travel_days_attributes: [:id]
     )
   end
 end

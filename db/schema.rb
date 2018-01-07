@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 20171219150153) do
   end
 
   create_table "travel_days", force: :cascade do |t|
-    t.integer "travel_days", null: false
     t.integer "siori_id", null: false
     t.integer "day", default: 1, null: false
     t.datetime "created_at", null: false
