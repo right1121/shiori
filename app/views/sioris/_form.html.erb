@@ -1,11 +1,15 @@
-<%= form_for @siori do |f| %>
-  <%= f.text_area :content %>
-  <%= f.date_field :departure_date %>
-  <%= f.fields_for :travel_day do |d| %>
-    <%= d.number_field :day %>
-    <%= d.fields_for :tourist_spots do |ts| %>
-      <%= render partial: "tourist_spot_form", locals: {ts: ts } %>
-    <% end %>
-  <% end %>
+<div class="field">
+  <%= form_for @siori do |f| %>
+  <%= f.label :content %><br>
+  <%= f.text_area :content %><br>
+  <%= f.label :departure_date %><br>
+  <%= f.date_field :departure_date %><br>
+  
+  
+  <%= render partial: "travel_day_form", locals: {f: f } %>
+  
+  <%= link_to_add_day("detail add", f, :travel_day, {}) %>
+  
   <%= f.submit "しおりを作成する" %>
-<% end %>
+  <% end %>
+</div>
