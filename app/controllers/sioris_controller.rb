@@ -14,7 +14,7 @@ class SiorisController < ApplicationController
   
   def create
     @siori = Siori.new(siori_params)
-    @user = find_login_user
+    @user = current_user
     @user.sioris << @siori
     
     if @user.save
