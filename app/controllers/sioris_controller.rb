@@ -10,6 +10,8 @@ class SiorisController < ApplicationController
   def new
     @siori = Siori.new
     @siori.build_travel_day
+    @siori.travel_day.tourist_spots.build
+    @siori.travel_day.tourist_spots.first.build_tourist_detail
   end
   
   def create

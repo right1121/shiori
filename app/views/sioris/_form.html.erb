@@ -3,6 +3,9 @@
   <%= f.date_field :departure_date %>
   <%= f.fields_for :travel_day do |d| %>
     <%= d.number_field :day %>
-  <% end %>      
+    <%= d.fields_for :tourist_spots do |ts| %>
+      <%= render partial: "tourist_spot_form", locals: {ts: ts } %>
+    <% end %>
+  <% end %>
   <%= f.submit "しおりを作成する" %>
 <% end %>
