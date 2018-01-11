@@ -5,9 +5,6 @@
   <%= f.label :departure_date %><br>
   <%= f.date_field :departure_date %><br>
   
-  
-  <%= render partial: "travel_day_form", locals: { f: f } %>
-  
   <%= link_to_add_day("detail add", f, :travel_day, {}) %>
   
   <%= f.submit "しおりを作成する" %>
