@@ -36,6 +36,7 @@ class SiorisController < ApplicationController
   end
   
   private
+  
   def siori_params
     params.require(:siori).permit(
       :content,

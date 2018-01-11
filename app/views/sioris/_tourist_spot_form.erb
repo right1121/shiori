@@ -2,6 +2,6 @@
     <%= ts.label :order %><br>
     <%= ts.number_field :order %><br>
     <%= ts.fields_for :tourist_details do |td| %>
-        <%= render partial: "tourist_detail_form", locals: {td: td } %>
+        <%= render partial: "tourist_detail_form", locals: { td: td } %>
     <% end %>
 </div>

@@ -6,7 +6,7 @@
   <%= f.date_field :departure_date %><br>
   
   
-  <%= render partial: "travel_day_form", locals: {f: f } %>
+  <%= render partial: "travel_day_form", locals: { f: f } %>
   
   <%= link_to_add_day("detail add", f, :travel_day, {}) %>
   
