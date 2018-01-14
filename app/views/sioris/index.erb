@@ -3,6 +3,6 @@
 
 <p><%= current_user.id %></p>
 
-<% @sioris.each do |siori| %>
+<% current_user.each do |siori| %>
   <p><%= siori.id %></p>
 <% end %>
