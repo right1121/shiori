@@ -40,7 +40,10 @@ class SiorisController < ApplicationController
     params.require(:siori).permit(
       :content,
       :departure_date,
-      {user_id: []}
+      travel_day: [
+        :id,
+        :day
+        ]
     )
   end
 end

@@ -15,3 +15,4 @@
 //= require_tree .
 // Bootstrap Sass
 //= require bootstrap-sprockets
+//= require jquery_nested_form

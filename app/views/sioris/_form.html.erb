@@ -1,11 +1,11 @@
 <div class="field">
-  <%= form_for @siori do |f| %>
+  <%= nested_form_for @siori do |f| %>
   <%= f.label :content %><br>
   <%= f.text_area :content %><br>
   <%= f.label :departure_date %><br>
   <%= f.date_field :departure_date %><br>
   
-  <%= link_to_add_day("detail add", f, :travel_day, {}) %>
+  <%= render partial:'travel_day_form', locals:{ f: f }%>
   
   <%= f.submit "しおりを作成する" %>
   <% end %>
