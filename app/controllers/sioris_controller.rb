@@ -16,8 +16,8 @@ class SiorisController < ApplicationController
   
   def create
     @siori = current_user.sioris.new(siori_params)
-    @siori.save
-    if current_user.sioris.create(siori_params)
+    
+    if @siori.save
       redirect_to sioris_url
     else
       render 'new'
