@@ -4,22 +4,5 @@ class SiorisController < ApplicationController
   def index
     @sioris = current_user.sioris
   end
-  
-  def show
-  end
-  
-  def new
-  end
-  
-  def create
-  end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 end
