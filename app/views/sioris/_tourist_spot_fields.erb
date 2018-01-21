@@ -1,0 +1,19 @@
+<div class="field">
+    <%= f.hidden_field :order %><br>
+    <%= f.label :arrival_time, "到着時刻" %>
+    <%= f.time_select :arrival_time, include_blank: :true %>
+    <%= f.label :duration, "滞在時刻" %>
+    <%= f.number_field :duration, min: 0 %><br>
+    <%= f.fields_for :tourist_detail do |f| %>
+        <div class="field">
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+            <%= f.label :content %>
+            <%= f.text_field :content %>
+            <%= f.label :longitude, "緯度" %>
+            <%= f.number_field :longitude %>
+            <%= f.label :longitude, "経度" %>
+            <%= f.number_field :longitude %>
+        </div>
+    <% end %>
+</div>

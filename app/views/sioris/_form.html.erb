@@ -5,7 +5,8 @@
   <%= f.label :departure_date %><br>
   <%= f.date_field :departure_date %><br>
   
-  <%= render partial:'travel_day_form', locals:{ f: f }%>
+  <%= f.fields_for :travel_day %>
+  <p><%= f.link_to_add "日付を追加する", :travel_day %></p>
   
   <%= f.submit "しおりを作成する" %>
   <% end %>

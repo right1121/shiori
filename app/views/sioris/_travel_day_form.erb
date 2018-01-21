@@ -1,8 +1,0 @@
-<%= f.fields_for :travel_day do |d| %>
-  <%= d.label :day %><br>
-  <%= d.number_field :day %><br>
-  <%= d.fields_for :tourist_spots do |ts| %>
-    <%= render partial: "tourist_spot_form", locals: { ts: ts } %>
-  <% end %>
-<% end %>
-<%= f.link_to_add "Add", :travel_day %>
