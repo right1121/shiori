@@ -1,13 +1,22 @@
-<div class="field">
-  <%= nested_form_for @siori do |f| %>
-  <%= f.label :content %><br>
-  <%= f.text_area :content %><br>
-  <%= f.label :departure_date %><br>
-  <%= f.date_field :departure_date %><br>
+<%= form_for @siori do |f| %>
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :departure_date %><br>
+    <%= f.date_field :departure_date %>
+  </div>
   
-  <%= f.fields_for :travel_day %>
-  <p><%= f.link_to_add "日付を追加する", :travel_day %></p>
-  
-  <%= f.submit "しおりを作成する" %>
-  <% end %>
-</div>
+  <div id="travel_day">
+    <%= f.fields_for :travel_day do |day| %>
+      <%= render 'travel_day_fields', f: day %>
+      <div class="links">
+        <%= link_to_add_association "add", f, :travel_day %>
+      </div>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit "しおりを作成する" %>
+  </div>
+<% end %>
