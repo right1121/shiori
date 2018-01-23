@@ -18,6 +18,7 @@ class SiorisController < ApplicationController
     @siori = current_user.sioris.new(siori_params)
     
     if @siori.save
+      current_user.sioris << @siori
       redirect_to sioris_url
     else
       render 'new'
@@ -38,15 +39,11 @@ class SiorisController < ApplicationController
   def siori_params
     params.require(:siori).permit(
       :content,
-<<<<<<< HEAD
       :departure_date,
       travel_day_attributes: [
         :id,
         :day
         ]
-=======
-      :departure_date
->>>>>>> parent of 3f3fba3... インスタンス変数名の変更とリファクタリング
     )
   end
 end

@@ -39,4 +39,3 @@ gem 'bootstrap-sass'
 gem 'devise_invitable'
 gem 'ranked-model'
 gem 'jquery-turbolinks'
-gem "nested_form"
