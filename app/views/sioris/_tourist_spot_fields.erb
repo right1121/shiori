@@ -1,5 +1,5 @@
-<div class="field">
-    <%= f.hidden_field :order %><br>
+<div class="nested-fields">
+    <%= f.hidden_field :order, value: 1 %><br>
     <%= f.label :arrival_time, "到着時刻" %>
     <%= f.time_select :arrival_time, include_blank: :true %>
     <%= f.label :duration, "滞在時刻" %>

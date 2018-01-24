@@ -42,7 +42,16 @@ class SiorisController < ApplicationController
       :departure_date,
       travel_day_attributes: [
         :id,
-        :day
+        :day,
+        tourist_spots_attributes: [
+          :id,
+          :order,
+          :arrival_time,
+          :duration,
+          tourist_detail_attributes: [
+            :id
+            ]
+          ]
         ]
     )
   end
