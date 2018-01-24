@@ -49,7 +49,8 @@ class SiorisController < ApplicationController
           :arrival_time,
           :duration,
           tourist_detail_attributes: [
-            :id
+            :id,
+            :title
             ]
           ]
         ]
