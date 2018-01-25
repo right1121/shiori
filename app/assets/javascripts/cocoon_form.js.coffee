@@ -10,7 +10,7 @@ $ ->
       console.log('after insert')
       added_task.css("background","red")
     .on 'cocoon:before-remove', (e, task_to_be_removed) ->
-      console.log('before remove')
+      console.log(task_to_be_removed)
       task_to_be_removed.fadeOut('slow')
     .on 'cocoon:after-remove', (e, removed_task) ->
       console.log('after remove')
