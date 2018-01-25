@@ -1,7 +1,7 @@
-<div class="nested-fields bg-success">
+<div class="nested-fields bg-success day">
     <div class="field">
       <%= f.label :day %><br>
-      <%= f.number_field :day %>
+      <%= f.number_field :day, class: 'day_form' %>
       <%= f.fields_for :tourist_spots do |s| %>
         <%= render 'tourist_spot_fields', f: s %>
       <% end %>

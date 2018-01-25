@@ -8,7 +8,7 @@
     <%= f.date_field :departure_date %>
   </div>
   
-  <div id="travel_day">
+  <div class="nested-form">
     <%= f.fields_for :travel_day do |day| %>
       <%= render 'travel_day_fields', f: day %>
     <% end %>
