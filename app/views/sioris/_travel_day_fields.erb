@@ -2,12 +2,20 @@
     <div class="field">
       <%= f.label :day %><br>
       <%= f.hidden_field :day, class: 'day_form' %>
-      <%= f.fields_for :tourist_spots do |s| %>
-        <%= render 'tourist_spot_fields', f: s %>
-      <% end %>
-      <div class="links">
-        <%= link_to_add_association "add", f, :tourist_spots %>
+      <div class = "spot-sortable">
+        <%= f.fields_for :tourist_spots do |s| %>
+          <%= render 'tourist_spot_fields', f: s %>
+        <% end %>
       </div>
-      <%= link_to_remove_association "日付の削除", f %>
+        <%= link_to_add_association "add", f, :tourist_spots,
+        data: {
+          association_insertion_traversal: 'siblings',
+          association_insertion_node: '.spot-sortable',
+          association_insertion_method: 'append'
+        } %>
+
+      <div class="fields">
+        <%= link_to_remove_association "日付の削除", f %>
+      </div>
     </div>
 </div><br>

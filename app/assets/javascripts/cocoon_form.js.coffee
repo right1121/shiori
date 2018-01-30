@@ -10,6 +10,7 @@ $ ->
         $('.day_form').last().val(day_count)
       if added_task.hasClass('nested-fields')
         added_task.find('.add_fields').click()
+        $('.spot-sortable').sortable()
       
     .on 'cocoon:before-remove', (e, task_to_be_removed) ->
       if task_to_be_removed.hasClass('day_field')
