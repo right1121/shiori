@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   
   def after_sign_in_path_for(resource)
     # FIXME: 推移先を作成後に修正する。
-    '/users/edit'
+    '/sioris'
   end
   
   protected
