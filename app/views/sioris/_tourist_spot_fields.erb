@@ -1,0 +1,14 @@
+<div  class = "nested-fields">
+    <%= f.hidden_field :order %><br>
+    <%= f.label :arrival_time, "到着時刻" %>
+    <%= f.time_select :arrival_time, include_blank: :true %>
+    <%= f.label :duration, "滞在時刻" %>
+    <%= f.number_field :duration, min: 0 %><br>
+    <%= f.fields_for :tourist_detail do |f| %>
+      <%= render 'tourist_detail_fields', f: f %>
+    <% end %>
+    <div class="links", style = "visibility:hidden" >
+      <%= link_to_add_association "add", f, :tourist_detail %>
+    </div>
+    <%= link_to_remove_association "観光地の削除", f %>
+</div>

@@ -19,6 +19,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'pry-rails'
+  gem 'hirb'
+  gem 'hirb-unicode'
 end
 
 group :development do
@@ -31,8 +33,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'kaminari'
+gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'bootstrap-sass'
 gem 'devise_invitable'
 gem 'ranked-model'
 gem 'jquery-turbolinks'
+gem 'cocoon'
