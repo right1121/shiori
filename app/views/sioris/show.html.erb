@@ -1,5 +1,22 @@
 <h1>Sioris#ahow</h1>
-<p>Find me in app/views/sioris/ahow.html.erb</p>
+<p>Find me in app/views/sioris/show.html.erb</p>
 
-<p><%= @sioris.id %></p>
-<p><%= @user.id %></p>
+<div>
+  <p><%= @siori.content %></p>
+  <p><%= @siori.departure_date.strftime("%Y年 %m月 %d日") %></p>
+</div>
+<div>
+  <% @siori.travel_day.each do |day| %>
+    <div>
+      <p><%= day.day %>日目</p>
+      <% day.tourist_spots.each do |spot| %>
+        <div>
+          <p>到着時間　<%= spot.arrival_time.strftime("%H：%M") %></p>
+          <p>滞在時間　<%= spot.duration %></p>
+          <p>タイトル　<%= spot.tourist_detail.title %></p>
+          <p>内容　<%= spot.tourist_detail.content %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
