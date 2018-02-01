@@ -5,5 +5,6 @@
   <div>
     <p><%= travel_group.siori.content %></p>
     <p><%= travel_group.siori.departure_date %></p>
+    <p><%= link_to '詳細表示', siori_path(travel_group.siori) %></p>
   </div>
 <% end %>
