@@ -84,4 +84,30 @@
     color: #e6e6e6;
   }
 }
-
+.spot-fields{
+ padding: 0px 50px 0px 100px;
+ margin: 0px 0px 50px 0px;
+.spot-content{
+    margin:2em 0;
+    position: relative;
+    padding: 0.5em 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+.spot-content:before, .spot-content:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.spot-content:before {left: 10px;}
+.spot-content:after {right: 10px;}
+.spot-content p {
+    margin: 0; 
+    padding: 0;
+    font-size: 16px;
+}
+}
