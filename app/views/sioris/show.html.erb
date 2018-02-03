@@ -24,4 +24,10 @@
       </div>
     <% end %>
   </div>
+  <div>
+    <input id="foo" value="<%= request.url %>" size="60">
+    <button class="btn" data-clipboard-target="#foo">
+        クリップボードにコピー
+    </button>
+  </div>
 </div>
