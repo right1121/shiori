@@ -19,7 +19,25 @@
 
 .siori-index{
   .col-md-4:first-child{
-    
+    .btn{
+      display: inline-block;
+      padding: 0.5em 1em;
+      text-decoration: none;
+      color: #67c5ff;
+      border: dashed 1px #67c5ff;
+      border-radius: 3px;
+      transition: .4s;
+      height: 80%;
+      width: 80%;
+      line-height: 100px;
+      font-size: 30px;
+      margin: 20px 0;
+    }
+    .btn:hover {
+    border-style: dotted;
+    background: #67c5ff;
+    color: #ffffff;
+    }
   }
   .col-md-4{
     padding: 0px;
@@ -28,9 +46,12 @@
     .siori-content{
       width: 80%;
       height: 80%;
-      margin: 10px;
-      border: solid 1px;
-      padding: 20px;
+      padding: 0.5em 1em;
+      margin: 20px 0;
+      color: #5d627b;
+      background: white;
+      border-top: solid 5px #5d627b;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
     }
   }
 }
