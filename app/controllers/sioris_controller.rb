@@ -33,6 +33,8 @@ class SiorisController < ApplicationController
   end
 
   def destroy
+    Siori.find(params[:id]).destroy
+    redirect_to sioris_path
   end
   
   private
