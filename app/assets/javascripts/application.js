@@ -19,3 +19,9 @@
 // Bootstrap Sass
 //= require bootstrap-sprockets
 //= require cocoon
+$(function () {
+  var clipboard = new Clipboard('.btn');
+  clipboard.on('success', function(e) {
+    e.clearSelection();
+  })
+});
