@@ -16,3 +16,21 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.siori-index{
+  .col-md-4:first-child{
+    
+  }
+  .col-md-4{
+    padding: 0px;
+    height: 200px;
+    
+    .siori-content{
+      width: 80%;
+      height: 80%;
+      margin: 10px;
+      border: solid 1px;
+      padding: 20px;
+    }
+  }
+}
