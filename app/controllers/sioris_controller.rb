@@ -52,7 +52,9 @@ class SiorisController < ApplicationController
           tourist_detail_attributes: [
             :id,
             :title,
-            :content
+            :content,
+            :longitude,
+            :latitude
             ]
           ]
         ]
