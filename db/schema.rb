@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171219150153) do
+ActiveRecord::Schema.define(version: 20180208085836) do
 
   create_table "sioris", force: :cascade do |t|
     t.text "content"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20171219150153) do
     t.integer "siori_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "Owner", default: false, null: false
     t.index ["siori_id"], name: "index_travel_groups_on_siori_id"
     t.index ["user_id"], name: "index_travel_groups_on_user_id"
   end
