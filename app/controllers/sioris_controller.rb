@@ -19,6 +19,9 @@ class SiorisController < ApplicationController
     
     if @siori.save
       current_user.sioris << @siori
+      @group = @siori.travel_groups.last
+      @group.Owner = true
+      @group.save
       redirect_to sioris_url
     else
       render 'new'
@@ -45,7 +48,7 @@ class SiorisController < ApplicationController
         :day,
         tourist_spots_attributes: [
           :id,
-          :order,
+          :order_position,
           :arrival_time,
           :duration,
           tourist_detail_attributes: [
