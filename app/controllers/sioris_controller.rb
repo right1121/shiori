@@ -5,6 +5,7 @@ class SiorisController < ApplicationController
   end
   
   def show
+    @siori = Siori.find(params[:id])
   end
   
   def new
