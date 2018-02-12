@@ -61,11 +61,4 @@ class SiorisController < ApplicationController
     )
   end
   
-  def follow(siori)
-    current_user.create(siori_id: siori.id)
-  end
-  
-  def follow?(siori)
-  end
-  
 end
