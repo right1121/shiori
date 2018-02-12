@@ -9,15 +9,13 @@
     <% end %>
   </ul>
   <div>
-    <%= form_for(current_user.travel_groups.build) do |f| %>
       <% if user_signed_in? %>
         <% if current_user.following?(@siori) %>
-          <%= render 'unfollow', f: f %>
+          <%= render 'unfollow' %>
         <% else %>
-          <%= render 'follow', f: f %>
+          <%= render 'follow' %>
         <% end %>
       <% end %>
-    <% end %>
   </div>
   
   <div  class='tab-content'>

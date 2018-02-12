@@ -19,5 +19,6 @@ class User < ApplicationRecord
   end
   
   def unfollow(siori)
+    travel_groups.find_by(siori_id: siori).destroy
   end
 end
