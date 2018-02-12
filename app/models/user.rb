@@ -8,7 +8,6 @@ class User < ApplicationRecord
   
   has_many :travel_groups, dependent: :destroy
   has_many :sioris, through: :travel_groups, dependent: :destroy
-  
     
   def follow(siori)
     travel_groups.create(siori_id: siori.id)
