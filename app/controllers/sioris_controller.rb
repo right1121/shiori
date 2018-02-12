@@ -20,9 +20,9 @@ class SiorisController < ApplicationController
     
     if @siori.save
       current_user.sioris << @siori
-      @group = @siori.travel_groups.last
-      @group.owner = true
-      @group.save
+      @travel_group = @siori.travel_groups.find_by(user_id: current_user)
+      @travel_group.owner = true
+      @travel_group.save
       redirect_to sioris_url
     else
       render 'new'

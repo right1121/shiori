@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20180208085836) do
     t.integer "siori_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "Owner", default: false, null: false
+    t.boolean "owner", default: false, null: false
     t.index ["siori_id"], name: "index_travel_groups_on_siori_id"
     t.index ["user_id"], name: "index_travel_groups_on_user_id"
   end
