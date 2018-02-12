@@ -21,7 +21,7 @@ class SiorisController < ApplicationController
     if @siori.save
       current_user.sioris << @siori
       @group = @siori.travel_groups.last
-      @group.Owner = true
+      @group.owner = true
       @group.save
       redirect_to sioris_url
     else
