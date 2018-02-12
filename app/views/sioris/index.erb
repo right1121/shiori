@@ -1,2 +1,16 @@
-<h1>Sioris#index</h1>
-<p>Find me in app/views/sioris/index.html.erb</p>
+<div class="container siori-index">
+  <div class="row">
+    <div class="col-md-4">
+        <%= link_to 'しおりを作る', new_siori_path ,class: "btn"%>
+    </div>
+    <% current_user.travel_groups.each do |travel_group| %>
+      <div class="col-md-4">
+        <div class="siori-content">
+          <p>出発日：<%= travel_group.siori.departure_date ? travel_group.siori.departure_date : '未定' %></p>
+          <p>タイトル：<%= travel_group.siori.content %></p>
+          <p><%= link_to '詳細表示', siori_path(travel_group.siori) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
