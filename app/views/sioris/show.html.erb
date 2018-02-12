@@ -4,10 +4,8 @@
     <h3>出発日：<%= @siori.departure_date.strftime('%Y年 %m月 %d日') %></h4>
     <div class='follow-btn'>
       <% if user_signed_in? %>
-        <% if current_user.following?(@siori) %>
-          <% if current_user.not_owner?(@siori) %>
-            <%= render 'unfollow' %>
-          <% end %>
+        <% if current_user.following?(@siori) && current_user.not_owner?(@siori) %>
+          <%= render 'unfollow' %>
         <% else %>
           <%= render 'follow' %>
         <% end %>
