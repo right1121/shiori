@@ -11,7 +11,9 @@
   <div>
       <% if user_signed_in? %>
         <% if current_user.following?(@siori) %>
-          <%= render 'unfollow' %>
+          <% if current_user.not_owner?(@siori) %>
+            <%= render 'unfollow' %>
+          <% end %>
         <% else %>
           <%= render 'follow' %>
         <% end %>
