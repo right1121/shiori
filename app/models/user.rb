@@ -14,6 +14,10 @@ class User < ApplicationRecord
     travel_groups.create(siori_id: siori.id)
   end
   
-  def follow?(siori)
+  def following?(siori)
+    sioris.include?(siori)
+  end
+  
+  def unfollow(siori)
   end
 end

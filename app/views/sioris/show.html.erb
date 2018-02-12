@@ -9,9 +9,14 @@
     <% end %>
   </ul>
   <div>
-    <%= form_for(current_user.travel_groups.build,　url: {action: :follow}) do |f| %>
-      <div><%= hidden_field_tag :siori_id, @siori.id %></div>
-      <%= f.submit "Follow", class: "btn btn-primary" %>
+    <%= form_for(current_user.travel_groups.build) do |f| %>
+      <% if user_signed_in? %>
+        <% if current_user.following?(@siori) %>
+          <%= render 'unfollow', f: f %>
+        <% else %>
+          <%= render 'follow', f: f %>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
   
