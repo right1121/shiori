@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :sioris do
     put :sort
   end
+  
 end
