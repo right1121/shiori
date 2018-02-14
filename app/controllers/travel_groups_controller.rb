@@ -8,8 +8,8 @@ class TravelGroupsController < ApplicationController
   end
 
   def destroy
-    siori = TravelGroup.find(params[:id]).siori_id
-    current_user.unfollow(siori)
-    redirect_to Siori.find(siori)
+    siori_id = TravelGroup.find(params[:id]).siori_id
+    current_user.unfollow(siori_id)
+    redirect_to Siori.find(siori_id)
   end
 end
