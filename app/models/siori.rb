@@ -4,4 +4,8 @@ class Siori < ApplicationRecord
     
     has_many :travel_day
     accepts_nested_attributes_for :travel_day, allow_destroy: true
+    
+  def date_check
+    departure_date.nil? ? "未定" : departure_date.strftime('%Y年 %m月 %d日')
+  end
 end
