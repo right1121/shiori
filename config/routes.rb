@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :sioris do
     put :sort
   end
+  
+  resources :travel_groups, only: [ :create, :destroy ]
 end
