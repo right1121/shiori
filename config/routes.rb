@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     put :sort
   end
   
+  resources :travel_groups, only: [ :create, :destroy ]
 end

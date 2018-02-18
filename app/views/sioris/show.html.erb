@@ -2,12 +2,22 @@
   <div class='title'>
     <span><%= @siori.content %></span>
     <h3>出発日：<%= @siori.departure_date.strftime('%Y年 %m月 %d日') %></h4>
+    <div class='follow-btn'>
+      <% if user_signed_in? && current_user.not_owner?(@siori) %>
+        <% if current_user.following?(@siori) %>
+          <%= render 'unfollow' %>
+        <% else %>
+          <%= render 'follow' %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
   <ul class='nav nav-tabs'>
     <% @siori.travel_day.each do |day| %>
       <li <%= 'class = active' if day.day.to_i == 1 %>><a href='#day-<%= day.id %>'  data-toggle='tab'><%= day.day %>日目</a></li>
     <% end %>
   </ul>
+  
   
   <div  class='tab-content'>
     <% @siori.travel_day.each do |day| %>
