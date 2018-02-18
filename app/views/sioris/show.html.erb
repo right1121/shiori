@@ -1,7 +1,7 @@
 <div class='container'>
   <div class='title'>
     <span><%= @siori.content %></span>
-    <h3>出発日：<%= @siori.date_check %></h4>
+    <h3>出発日：<%= @siori.get_depature_date %></h4>
   </div>
   <ul class='nav nav-tabs'>
     <% @siori.travel_day.each do |day| %>
