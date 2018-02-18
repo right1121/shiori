@@ -1,6 +1,6 @@
 class TouristSpot < ApplicationRecord
     include RankedModel
-    ranks :order
+    ranks :order, with_same: :travel_day_id
     
     belongs_to :travel_day
     has_one :tourist_detail
