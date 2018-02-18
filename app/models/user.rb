@@ -8,4 +8,20 @@ class User < ApplicationRecord
   
   has_many :travel_groups, dependent: :destroy
   has_many :sioris, through: :travel_groups, dependent: :destroy
+    
+  def follow(siori)
+    travel_groups.create(siori_id: siori.id)
+  end
+  
+  def following?(siori)
+    sioris.include?(siori)
+  end
+  
+  def unfollow(siori)
+    travel_groups.find_by(siori_id: siori).destroy
+  end
+  
+  def not_owner?(siori)
+      travel_groups.find_by(siori_id: siori) ? !travel_groups.find_by(siori_id: siori).owner : true
+  end
 end
