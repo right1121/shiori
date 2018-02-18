@@ -6,6 +6,10 @@ class SiorisController < ApplicationController
   
   def show
     @siori = Siori.find(params[:id])
+    if user_signed_in?
+      @group_build = current_user.travel_groups.build
+      @connecting_group = current_user.travel_groups.find_by(siori_id: @siori.id)
+    end
   end
   
   def new
@@ -20,6 +24,9 @@ class SiorisController < ApplicationController
     
     if @siori.save
       current_user.sioris << @siori
+      @travel_group = @siori.travel_groups.find_by(user_id: current_user)
+      @travel_group.owner = true
+      @travel_group.save
       redirect_to sioris_url
     else
       render 'new'
@@ -46,7 +53,7 @@ class SiorisController < ApplicationController
         :day,
         tourist_spots_attributes: [
           :id,
-          :order,
+          :order_position,
           :arrival_time,
           :duration,
           tourist_detail_attributes: [
