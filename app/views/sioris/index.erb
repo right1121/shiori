@@ -6,7 +6,7 @@
     <% current_user.travel_groups.each do |travel_group| %>
       <div class="col-md-4">
         <div class="siori-content">
-          <p>出発日：<%= travel_group.siori.departure_date ? travel_group.siori.departure_date : '未定' %></p>
+          <p>出発日：<%= travel_group.siori.get_depature_date %></p>
           <p>タイトル：<%= travel_group.siori.content %></p>
           <p><%= link_to '詳細表示', siori_path(travel_group.siori) %></p>
         </div>
