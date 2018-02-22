@@ -24,4 +24,10 @@ class User < ApplicationRecord
   def not_owner?(siori)
       travel_groups.find_by(siori_id: siori) ? !travel_groups.find_by(siori_id: siori).owner : true
   end
+  
+  def load_owner_siori
+    travel_groups.select do |siori|
+      siori.owner
+    end
+  end
 end
