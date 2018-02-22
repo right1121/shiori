@@ -1,11 +1,11 @@
 <div class="container siori-index">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4" data-no-turbolink="true">
         <%= link_to 'しおりを作る', new_siori_path ,class: "btn"%>
     </div>
     <% current_user.travel_groups.each do |travel_group| %>
       <div class="col-md-4">
-        <div class="siori-content">
+        <div class="siori-content" data-no-turbolink='true'>
           <p>出発日：<%= travel_group.siori.get_depature_date %></p>
           <p>タイトル：<%= travel_group.siori.content %></p>
           <p><%= link_to '詳細表示', siori_path(travel_group.siori) %></p>
