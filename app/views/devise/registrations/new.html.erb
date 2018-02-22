@@ -5,13 +5,13 @@
     <%= devise_error_messages! %>
     <div class='field form-group'>
       <%= f.label :name %><br />
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class: 'form-control InputText' %>
     </div>
   
   
     <div class='field form-group'>
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
+      <%= f.email_field :email, autofocus: true, class: 'form-control InputText' %>
     </div>
   
     <div class='field form-group'>
@@ -19,12 +19,12 @@
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
+      <%= f.password_field :password, autocomplete: "off", class: 'form-control InputPassword' %>
     </div>
   
     <div class='field form-group'>
       <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control InputPassword' %>
     </div>
   
     <div class="actions">
