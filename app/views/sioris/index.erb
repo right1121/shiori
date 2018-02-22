@@ -13,4 +13,15 @@
       </div>
     <% end %>
   </div>
+  <div class="row">
+    <% current_user.load_followed_siori.each do |travel_group| %>
+      <div class="col-md-4">
+        <div class="siori-content">
+          <p>出発日：<%= travel_group.siori.get_depature_date %></p>
+          <p>タイトル：<%= travel_group.siori.content %></p>
+          <p><%= link_to '詳細表示', siori_path(travel_group.siori) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

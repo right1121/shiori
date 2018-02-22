@@ -30,4 +30,10 @@ class User < ApplicationRecord
       siori.owner
     end
   end
+  
+  def load_followed_siori
+    travel_groups.select do |siori|
+      !siori.owner
+    end
+  end
 end
