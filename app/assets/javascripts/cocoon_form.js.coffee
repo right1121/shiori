@@ -1,4 +1,4 @@
-$ ->
+$(document).on 'turbolinks:load', ->
   day_count = 1
   $('.nested-form')
     .on 'cocoon:before-insert', (e, task_to_be_added) ->
