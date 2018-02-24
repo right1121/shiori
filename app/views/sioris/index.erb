@@ -1,4 +1,7 @@
 <div class="container siori-index">
+  <div class="page-header">
+    <h1>自分のしおり</h1>
+  </div>
   <div class="row">
     <div class="col-md-4">
         <%= link_to 'しおりを作る', new_siori_path ,class: "btn"%>
@@ -12,6 +15,9 @@
         </div>
       </div>
     <% end %>
+  </div>
+  <div class="page-header">
+    <h1>フォローしたしおり</h1>
   </div>
   <div class="row">
     <% current_user.load_followed_siori.each do |travel_group| %>
