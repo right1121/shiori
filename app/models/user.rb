@@ -26,14 +26,19 @@ class User < ApplicationRecord
   end
   
   def load_owner_siori
-    travel_groups.sort_by { |a| a[:updated_at] }.reverse.select do |siori|
+    pick_newest_siori.select do |siori|
       siori.owner
     end
   end
   
   def load_followed_siori
-    travel_groups.sort_by { |a| a[:updated_at] }.reverse.select do |siori|
+    pick_newest_siori.select do |siori|
       !siori.owner
     end
+  end
+  
+private
+  def pick_newest_siori
+    travel_groups.sort_by { |a| a[:updated_at] }.reverse
   end
 end
