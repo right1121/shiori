@@ -3,7 +3,7 @@
     <span><%= @siori.content %></span>
     <h3>出発日：<%= @siori.departure_date.strftime('%Y年 %m月 %d日') %></h4>
     <div class='follow-btn'>
-      <% if user_signed_in? && current_user.not_owner?(@siori) %>
+      <% if user_signed_in? && !current_user.owner?(@siori) %>
         <% if current_user.following?(@siori) %>
           <%= render 'unfollow' %>
         <% else %>
@@ -40,8 +40,7 @@
     </button>
   </div>
   <div>
-    <% binding.pry %>
-    <% if user_signed_in? && current_user.not_owner?(@siori) %>
+    <% if user_signed_in? && current_user.owner?(@siori) %>
       <%= link_to "しおりを削除する", @siori, method: :delete, data: { confirm: "本当に削除しますか?" } %>
     <% end %>
   </div>
