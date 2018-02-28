@@ -6,8 +6,10 @@ class SiorisController < ApplicationController
   end
   
   def show
-    @group_build = current_user.travel_groups.build
-    @connecting_group = current_user.travel_groups.find_by(siori_id: @siori.id)
+    if user_signed_in?
+      @group_build = current_user.travel_groups.build
+      @connecting_group = current_user.travel_groups.find_by(siori_id: @siori.id)
+    end
   end
   
   def new
