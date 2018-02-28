@@ -22,6 +22,6 @@ class User < ApplicationRecord
   end
   
   def owner?(siori)
-      travel_groups.find_by(siori_id: siori) ? travel_groups.find_by(siori_id: siori).owner : false
+    travel_groups.find_by(siori_id: siori) ? travel_groups.find_by(siori_id: siori).owner : false
   end
 end
