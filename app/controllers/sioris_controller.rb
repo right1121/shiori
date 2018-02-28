@@ -1,17 +1,16 @@
 class SiorisController < ApplicationController
   before_action :authenticate_user!, except: [:show]
+  before_action :set_siori, only: [:show, :destroy]
   
   def index
   end
   
   def show
-    @siori = Siori.find(params[:id])
     @group_build = current_user.travel_groups.build
     @connecting_group = current_user.travel_groups.find_by(siori_id: @siori.id)
   end
   
   def new
-    @siori = Siori.new
     @siori.travel_day.build
     @siori.travel_day.first.tourist_spots.build
     @siori.travel_day.first.tourist_spots.first.build_tourist_detail
@@ -38,7 +37,7 @@ class SiorisController < ApplicationController
   end
 
   def destroy
-    Siori.find(params[:id]).destroy
+    @siori.destroy
     redirect_to sioris_path
   end
   
@@ -63,6 +62,10 @@ class SiorisController < ApplicationController
           ]
         ]
     )
+  end
+  
+  def set_siori
+    @siori = Siori.find(params[:id])
   end
   
 end
