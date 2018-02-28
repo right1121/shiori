@@ -59,7 +59,10 @@ class SiorisController < ApplicationController
           :duration,
           tourist_detail_attributes: [
             :id,
-            :title
+            :title,
+            :content,
+            :longitude,
+            :latitude
             ]
           ]
         ]
