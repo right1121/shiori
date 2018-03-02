@@ -24,4 +24,21 @@ class User < ApplicationRecord
   def owner?(siori)
     travel_groups.find_by(siori_id: siori) ? travel_groups.find_by(siori_id: siori).owner : false
   end
+  
+  def owner_siori
+    newest_siori.select do |siori|
+      siori.owner
+    end
+  end
+  
+  def followed_siori
+    newest_siori.select do |siori|
+      !siori.owner
+    end
+  end
+  
+private
+  def newest_siori
+    travel_groups.sort_by { |a| a[:updated_at] }.reverse
+  end
 end
