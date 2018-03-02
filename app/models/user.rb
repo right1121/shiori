@@ -25,20 +25,20 @@ class User < ApplicationRecord
       travel_groups.find_by(siori_id: siori) ? !travel_groups.find_by(siori_id: siori).owner : true
   end
   
-  def load_owner_siori
-    pick_newest_siori.select do |siori|
+  def owner_siori
+    newest_siori.select do |siori|
       siori.owner
     end
   end
   
-  def load_followed_siori
-    pick_newest_siori.select do |siori|
+  def followed_siori
+    newest_siori.select do |siori|
       !siori.owner
     end
   end
   
 private
-  def pick_newest_siori
+  def newest_siori
     travel_groups.sort_by { |a| a[:updated_at] }.reverse
   end
 end

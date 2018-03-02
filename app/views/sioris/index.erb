@@ -6,7 +6,7 @@
     <div class="col-md-4">
         <%= link_to 'しおりを作る', new_siori_path ,class: "btn"%>
     </div>
-    <% current_user.load_owner_siori.each do |travel_group| %>
+    <% current_user.owner_siori.each do |travel_group| %>
       <div class="col-md-4">
         <div class="siori-content">
           <p>出発日：<%= travel_group.siori.get_depature_date %></p>
@@ -20,7 +20,7 @@
     <h1>フォローしたしおり</h1>
   </div>
   <div class="row">
-    <% current_user.load_followed_siori.each do |travel_group| %>
+    <% current_user.followed_siori.each do |travel_group| %>
       <div class="col-md-4">
         <div class="siori-content">
           <p>出発日：<%= travel_group.siori.get_depature_date %></p>
