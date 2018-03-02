@@ -10,12 +10,31 @@
 
   <body>
     <header>
-            <nav>
-                <% if user_signed_in? %>
-                  <strong><%= current_user.name %></strong>
-                  <%= link_to 'プロフィール変更', edit_user_registration_path %>
-                  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-                <% end %>
+            <nav class='navbar navbar-default navbar-inverse navbar-fixed-top'>
+              <div class='container'>
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample">
+            				<span class="sr-only">Toggle navigation</span>
+            				<span class="icon-bar"></span>
+            				<span class="icon-bar"></span>
+            				<span class="icon-bar"></span>
+            			</button>
+            			<%= link_to 'しおり', root_path, class: "navbar-brand" %>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarEexample">
+                  <% if user_signed_in? %>
+                    <ul class="nav navbar-nav">
+                      <strong class="navbar-text"><%= current_user.name %>さん</strong>
+                        <li><%= link_to 'しおり一覧', sioris_path %></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+                      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+                    </ul>
+                  <% end %>
+                </div>
+              </div>
             </nav>
     </header>
     <% if user_signed_in? %>
