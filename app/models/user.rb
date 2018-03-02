@@ -21,7 +21,7 @@ class User < ApplicationRecord
     travel_groups.find_by(siori_id: siori).destroy
   end
   
-  def not_owner?(siori)
-      travel_groups.find_by(siori_id: siori) ? !travel_groups.find_by(siori_id: siori).owner : true
+  def owner?(siori)
+    travel_groups.find_by(siori_id: siori) ? travel_groups.find_by(siori_id: siori).owner : false
   end
 end

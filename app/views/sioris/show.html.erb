@@ -3,7 +3,7 @@
     <span><%= @siori.content %></span>
     <h3>出発日：<%= @siori.get_depature_date %></h3>
     <div class='follow-btn'>
-      <% if user_signed_in? && current_user.not_owner?(@siori) %>
+      <% if user_signed_in? && !current_user.owner?(@siori) %>
         <% if current_user.following?(@siori) %>
           <%= render 'unfollow' %>
         <% else %>
@@ -17,7 +17,6 @@
       <li <%= 'class = active' if day.day.to_i == 1 %>><a href='#day-<%= day.id %>'  data-toggle='tab'><%= day.day %>日目</a></li>
     <% end %>
   </ul>
-  
   
   <div  class='tab-content'>
     <% @siori.travel_day.each do |day| %>
@@ -39,5 +38,10 @@
     <button class="btn" data-clipboard-target="#foo">
         クリップボードにコピー
     </button>
+  </div>
+  <div>
+    <% if user_signed_in? && current_user.owner?(@siori) %>
+      <%= link_to "しおりを削除する", @siori, method: :delete, data: { confirm: "本当に削除しますか?" } %>
+    <% end %>
   </div>
 </div>
