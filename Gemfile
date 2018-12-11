@@ -43,3 +43,4 @@ gem 'devise_invitable'
 gem 'ranked-model'
 gem 'jquery-turbolinks'
 gem 'cocoon'
+gem 'therubyracer', platforms: :ruby
