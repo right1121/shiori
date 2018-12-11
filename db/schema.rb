@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180208085836) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "sioris", force: :cascade do |t|
     t.text "content"
     t.date "departure_date"
@@ -49,8 +52,8 @@ ActiveRecord::Schema.define(version: 20180208085836) do
   end
 
   create_table "travel_groups", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "siori_id"
+    t.bigint "user_id"
+    t.bigint "siori_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "owner", default: false, null: false
@@ -76,4 +79,6 @@ ActiveRecord::Schema.define(version: 20180208085836) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "travel_groups", "sioris"
+  add_foreign_key "travel_groups", "users"
 end
